@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as go from 'gojs';
 import { ReactDiagram } from 'gojs-react';
 import '../App.css';
+import Button from 'react-bootstrap/Button';
+
+
 
 function initDiagram() {
     const diagram =
@@ -119,6 +122,7 @@ function initDiagram() {
                     { key: "Inicio" },
                     { key: "Escena 1" },
                     { key: "Escena 2" },
+                    
 
                 ],
                 // How the data (scenes) are linked
@@ -128,24 +132,39 @@ function initDiagram() {
             }
         );
 
+        
+
     return diagram;
 
 }
 
 export default function StoryDiagram() {
 
-    const data = [
-        { key: "One" },
-        { key: "Two" },
-        { key: "Three" },
-    ]
+    
+
+  
 
     return (
         <div>
+            <div className='tool-bar-storyDiagram' >
+                <Button
+                    style={{
+                        height: 28,
+                        backgroundColor: 'green',
+                        alignContent: 'center',
+                        fontSize: 10,
+                        marginLeft: 1
+
+                    }}
+                >
+                    Agregar escena +
+                </Button>
+            </div>
             <ReactDiagram
                 initDiagram={initDiagram}
                 divClassName='diagram-component'
-                //nodeDataArray={data}
+                
+            
 
             />
         </div>
